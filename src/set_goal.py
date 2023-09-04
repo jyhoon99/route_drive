@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+# 목표위치 지정 - 목표위치까지 이동  
+
 import rospy
 import actionlib
 from move_base_msgs.msg import MoveBaseAction, MoveBaseGoal

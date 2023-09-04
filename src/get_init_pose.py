@@ -1,5 +1,7 @@
 #! /usr/bin/env python
 
+
+# amcl_pose토픽을 받았을때, initialpose값을 amcl값으로 퍼블리시
 import rospy
 from geometry_msgs.msg import PoseWithCovarianceStamped
 

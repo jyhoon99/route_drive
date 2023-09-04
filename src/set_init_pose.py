@@ -1,13 +1,10 @@
 #! /usr/bin/env python
 
+# 초기위치 설정 - rviz상 모델 이동
+
 import rospy
-from geometry_msgs.msg import PoseWithCovarianceStamped
-
-
-
-
-rospy.init_node('set_init_pose', anonymous=True)
-pub = rospy.Publisher('/initialpose', PoseWithCovarianceStamped)
+from geometry_msgs.msg import PoseWithCovariance
+initpose_msg = PoseWithCovarianceStamped()
 initpose_msg = PoseWithCovarianceStamped()
 initpose_msg.header.frame_id = "map"
 initpose_msg.pose.pose.position.x = 0.7271415659708295

@@ -76,10 +76,8 @@ def send_navigation_goal(client, x, y, z, qx, qy, qz, qw):
     client.send_goal(goal, done_cb=done_cb, active_cb=active_cb, feedback_cb=feedback_cb)
     client.wait_for_result()
 
-if __name__ == '__main__':
-    rospy.init_node('set_initial_and_send_goal', anonymous=True)
-
-    # Setting initial pose
+# Function to set initial pose
+def set_initial_pose():
     pub = rospy.Publisher('/initialpose', PoseWithCovarianceStamped)
     initpose_msg = PoseWithCovarianceStamped()
     initpose_msg.header.frame_id = "map"
@@ -93,6 +91,12 @@ if __name__ == '__main__':
     rospy.loginfo("Setting initial pose")
     pub.publish(initpose_msg)
     rospy.loginfo("Initial pose SET")
+
+if __name__ == '__main__':
+    rospy.init_node('set_initial_and_send_goal', anonymous=True)
+
+    # Setting initial pose
+    set_initial_pose()
 
     # Initializing navigation client
     navclient = actionlib.SimpleActionClient('move_base', MoveBaseAction)

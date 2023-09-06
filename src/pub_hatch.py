@@ -1,10 +1,7 @@
 #!/usr/bin/env python
 
-# 키보드로 해치제어 
-
 import rospy
-from std_msgs.msg import String
-from hatch.msg import Message
+from hatch.msg import Message  # Message 메시지 유형을 임포트해야 합니다.
 
 def main():
     rospy.init_node("Publisher_node")
@@ -14,7 +11,7 @@ def main():
 
     while not rospy.is_shutdown():
         # 키보드 입력 받기
-        key = input()
+        key = input()  # 수정된 부분: raw_input() -> input()
 
         if key == 'f':
             work.mode = 1

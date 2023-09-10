@@ -34,7 +34,7 @@ def callback(data):
 
 def listener():
     rospy.init_node('point_cloud_listener', anonymous=True)
-    rospy.Subscriber("your_point_cloud_topic_name_here", PointCloud2, callback)
+    rospy.Subscriber("/yolov5/point_cloud", PointCloud2, callback)
     rospy.spin()
 
 if __name__ == '__main__':

@@ -8,40 +8,40 @@ from geometry_msgs.msg import PoseWithCovarianceStamped
 # Define the goal positions as an array
 goal_positions = [
     {
-        'x': 0.0050532572726404434,
-        'y': -0.0065163473167238264,
+        'x': 1,
+        'y': 0,
         'z': 0.0,
         'qx': 0.0,
         'qy': 0.0,
-        'qz': 0.9999854971906513,
-        'qw': 0.005385666937886398
+        'qz': -0.7,
+        'qw': 0.7
     },
     {
-        'x': -1.4849314812542065,
-        'y': -1.0723410808727862,
+        'x': 1,
+        'y': -1.3,
         'z': 0.0,
         'qx': 0.0,
         'qy': 0.0,
-        'qz': 0.7002975537695603,
-        'qw': 0.7138510602250092
+        'qz': -1,
+        'qw': 0
     },
     {
-        'x': -1.299856838616526,
-        'y': -0.01445918508071406,
+        'x': 0.3,
+        'y': -1.4,
         'z': 0.0,
         'qx': 0.0,
         'qy': 0.0,
-        'qz': 0.7248938375136363,
-        'qw': 0.6888605986226486
+        'qz': 0,
+        'qw': 1
     },
     {
-        'x': 0.01924784077285243,
-        'y': 0.08436867452749593,
+        'x': 0.1803995817899704,
+        'y': 0.056696951389312744,
         'z': 0.0,
         'qx': 0.0,
         'qy': 0.0,
-        'qz': -0.7021836726803337,
-        'qw': 0.7119958495814129
+        'qz': 0,
+        'qw': 1
     }
 ]
 
@@ -81,12 +81,12 @@ def set_initial_pose():
     pub = rospy.Publisher('/initialpose', PoseWithCovarianceStamped)
     initpose_msg = PoseWithCovarianceStamped()
     initpose_msg.header.frame_id = "map"
-    initpose_msg.pose.pose.position.x = -0.08292758642867278
-    initpose_msg.pose.pose.position.y = -0.08516219482204036
+    initpose_msg.pose.pose.position.x = 0.1803995817899704
+    initpose_msg.pose.pose.position.y = 0.056696951389312744
     initpose_msg.pose.pose.orientation.x = 0.0
     initpose_msg.pose.pose.orientation.y = 0.0
-    initpose_msg.pose.pose.orientation.z = -0.7021836726803337
-    initpose_msg.pose.pose.orientation.w = 0.7119958495814129
+    initpose_msg.pose.pose.orientation.z = 0
+    initpose_msg.pose.pose.orientation.w = 0.9999999999999988
     rospy.sleep(1)
     rospy.loginfo("Setting initial pose")
     pub.publish(initpose_msg)

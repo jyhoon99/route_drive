@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import rospy
-from hatch.msg import Message  # Message 메시지 유형을 임포트해야 합니다.
+from hatch.msg import Message 
 
 def main():
     rospy.init_node("Publisher_node")
@@ -28,3 +28,31 @@ if __name__ == '__main__':
         main()
     except rospy.ROSInterruptException:
         pass
+
+
+
+
+# def main():
+#     rospy.init_node("Publisher_node")
+#     pub = rospy.Publisher("topic", Message, queue_size=10)
+#     rate = rospy.Rate(10)
+#     work = Message()
+
+#     while not rospy.is_shutdown():
+#         work.mode = 1
+#         pub.publish(work)
+#         rate.sleep()  # sleep() 함수를 호출할 때 인수를 제거합니다.
+        
+#         work.mode = 2
+#         pub.publish(work)
+#         rate.sleep()  # sleep() 함수를 호출할 때 인수를 제거합니다.
+        
+#         work.mode = 3
+#         pub.publish(work)
+#         rate.sleep()  # sleep() 함수를 호출할 때 인수를 제거합니다.
+
+# if __name__ == '__main__':
+#     try:
+#         main()
+#     except rospy.ROSInterruptException:
+#         pass
